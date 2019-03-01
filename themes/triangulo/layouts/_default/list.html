@@ -1,11 +1,35 @@
 {{ define "main" }}
-<article class="card">
-  <div class="card-box">
-    <h2>CSS escalável além do básico</h2>
-  </div>
+<div class="articles">
+  <article class="card card--withDivider card--withLink">
+    <div class="card-box">
+      <h2 class="headline-2">
+        <a class="card-link" href='#'>CSS escalável além do básico</a>
+      </h2>
+    </div>
 
-  <div class="card-box card-box--divider">
-    <p>O que você precisa saber para escrever CSS que escala junto com o seu projeto</p>
-  </div>
-</article>
+    <div class="card-box">
+      <p class="paragraph">O que você precisa saber para escrever CSS que escala junto com o seu projeto.</p>
+    </div>
+  </article>
+
+  <article class="card card--withDivider card--featured">
+    <div class="card-box">
+      <h2 class="headline-2">Desvendando os poderes escondidos das estruturas de dados em JavaScript</h2>
+    </div>
+
+    <div class="card-box">
+      <p class="paragraph">Estruturas de dados podem ir muito além do que um simples objeto.</p>
+    </div>
+  </article>
+
+  <article class="card card--withDivider">
+    <div class="card-box">
+      <h2 class="headline-2">Layouts responsivos com Grid CSS</h2>
+    </div>
+
+    <div class="card-box">
+      <p class="paragraph">Algumas dicas de como utilizar Grid CSS para criar layouts responsivos que respeitam o fluxo do conteúdo.</p>
+    </div>
+  </article>
+</div>
 {{ end }}
