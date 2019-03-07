@@ -81,15 +81,12 @@ html {
   border-top: var(--card-border);
 }
 
-
-/* copy =============== */
-
-.headline-2 {
+.card-title {
   font-size: var(--font-size-large);
   margin: 0;
 }
 
-.paragraph {
+.card-paragraph {
   font-size: var(--font-size-base);
   margin: 0;
 }
