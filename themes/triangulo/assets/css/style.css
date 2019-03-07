@@ -6,7 +6,12 @@
   --paper: #fef7f1;
   --ink: #1f1f1f;
 
+  /* max-width */
+  --max-width-base: 45rem;
+
   /* spacing */
+  --spacing-xlarge: 2rem;
+  --spacing-large: 1.5rem;
   --spacing-base: 1rem;
   --spacing-small: 0.5rem;
 
@@ -98,4 +103,32 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
 
   grid-gap: var(--spacing-base);
+}
+
+/* section ============ */
+
+.section {
+  display: grid;
+  grid-gap: var(--spacing-large);
+}
+
+.section-title {
+  font-size: var(--font-size-large);
+  margin: 0;
+}
+
+/* content-wrapper ==== */
+
+.content-wrapper {
+  margin: 0 auto;
+  max-width: var(--max-width-base);
+}
+
+/* page =============== */
+
+.page {
+  display: grid;
+  grid-gap: var(--spacing-xlarge);
+
+  padding-top: var(--spacing-base);
 }
