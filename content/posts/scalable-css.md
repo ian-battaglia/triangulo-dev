@@ -1,5 +1,6 @@
 ---
-title: "Building scalable CSS"
+title: "CSS escalável além do básico"
+excerpt: "O que você precisa saber para escrever CSS que escala junto com o seu projeto."
 date: 2019-02-27T19:57:29-03:00
 draft: true
 ---

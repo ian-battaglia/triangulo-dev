@@ -5,17 +5,22 @@
       <h2 class="section-title">Artigos</h2>
 
       <div class="articles">
+        {{- $paginator := .Paginator }}
+        {{- range $paginator.Pages }}
         <article class="card card--withDivider card--withLink">
           <div class="card-box">
             <h2 class="card-title">
-              <a class="card-link" href='#'>CSS escalável além do básico</a>
+              <a class="card-link" href="{{ .Permalink | relURL }}">
+                {{ .Title }}
+              </a>
             </h2>
           </div>
 
           <div class="card-box">
-            <p class="card-paragraph">O que você precisa saber para escrever CSS que escala junto com o seu projeto.</p>
+            <p class="card-paragraph">{{ .Params.excerpt }}</p>
           </div>
         </article>
+        {{- end }}
       </div>
     </section>
   </div>
