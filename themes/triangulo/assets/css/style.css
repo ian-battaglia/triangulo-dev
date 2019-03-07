@@ -3,13 +3,14 @@
 
 :root {
   /* colors */
-  --paper: #fef7f1;
-  --ink: #1f1f1f;
+  --color-paper: #fef7f1;
+  --color-ink: #1f1f1f;
 
   /* max-width */
   --max-width-base: 45rem;
 
   /* spacing */
+  --spacing-xxlarge: 3rem;
   --spacing-xlarge: 2rem;
   --spacing-large: 1.5rem;
   --spacing-base: 1rem;
@@ -32,18 +33,18 @@
 }
 
 html {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-family);
 }
 
 /* card =============== */
 
 .card {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
 
-  --card-border: 2px solid var(--ink);
+  --card-border: 2px solid var(--color-ink);
   border: var(--card-border);
 }
 
@@ -130,5 +131,31 @@ html {
   display: grid;
   grid-gap: var(--spacing-xlarge);
 
+  padding-top: var(--spacing-xxlarge);
+}
+
+/* header ============= */
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
   padding-top: var(--spacing-base);
+  max-width: var(--max-width-base);
+  margin: 0 auto;
+}
+
+.header-menu-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: var(--spacing-base);
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  justify-content: end;
+}
+
+.header-menu-item-link {
+  color: var(--color-)
 }
