@@ -120,18 +120,14 @@ html {
   margin: 0;
 }
 
-/* content-wrapper ==== */
-
-.content-wrapper {
-  margin: 0 auto;
-  max-width: var(--max-width-base);
-}
-
 /* page =============== */
 
 .page {
   display: grid;
   grid-gap: var(--spacing-xlarge);
+
+  margin: 0 auto;
+  max-width: var(--max-width-base);
 
   padding-top: var(--spacing-xxlarge);
 }
