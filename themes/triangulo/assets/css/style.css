@@ -112,7 +112,7 @@ html {
   display: grid;
   grid-gap: var(--spacing-large);
 
-  padding: 0 var(--spacing-small);
+  padding: 0 var(--spacing-base);
 }
 
 .section-title {
@@ -138,7 +138,8 @@ html {
   display: grid;
   grid-template-columns: auto 1fr;
 
-  padding: var(--spacing-base) var(--spacing-small) 0;
+  padding: var(--spacing-base);
+  padding-bottom: 0;
   max-width: var(--max-width-base);
   margin: 0 auto;
 }
@@ -164,4 +165,35 @@ html {
 
 .header-menu-item-link {
   color: var(--color-)
+}
+
+/* post =============== */
+
+.post {
+  display: grid;
+  grid-gap: var(--spacing-xlarge);
+}
+
+.post-header {
+  padding: 0 var(--spacing-base);
+}
+
+.post-title {
+  font-size: var(--font-size-xlarge);
+  margin: 0;
+}
+
+.post-content {
+}
+
+.post-content p,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6,
+.post-content ul,
+.post-content ol,
+.post-content blockquote {
+  padding: 0 var(--spacing-base);
 }
