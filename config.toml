@@ -1,5 +1,5 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Triangulo"
+title = "Triângulo"
 
 theme = "triangulo"
