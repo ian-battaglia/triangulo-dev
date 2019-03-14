@@ -4,8 +4,7 @@
     <h2 class="section-title">Artigos</h2>
 
     <div class="articles">
-      {{- $paginator := .Paginator }}
-      {{- range $paginator.Pages }}
+      {{- range where .Pages "Type" "posts" }}
       <article class="card card--withDivider card--withLink">
         <div class="card-box">
           <h2 class="card-title">
