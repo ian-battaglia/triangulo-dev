@@ -20,7 +20,7 @@
   --spacing-small: 0.5rem;
   --spacing-xsmall: 0.25rem;
 
-  /* fonts */
+  /* typography */
   --font-family: 'Futura', 'Arial', sans-serif;
 
   --font-size-xlarge: 2rem;
@@ -29,6 +29,8 @@
 
   --font-weight-normal: 400;
   --font-weight-bold: 600;
+
+  --line-height-base: 1.4;
 }
 
 /* base =============== */
