@@ -3,12 +3,14 @@
 
 :root {
   /* colors */
-  --color-paper: #fef7f1;
-  --color-paper-highlight: #f9d6b8;
+  --color-paper: #fff;
+  --color-paper-transparent: rgba(255, 255, 255, 0.8);
+  --color-paper-highlight: #ddd;
   --color-ink: #1f1f1f;
 
   /* max-width */
   --max-width-base: 45rem;
+  --max-width-large: 65rem;
 
   /* spacing */
   --spacing-xxlarge: 3rem;
@@ -19,11 +21,14 @@
   --spacing-xsmall: 0.25rem;
 
   /* fonts */
-  --font-family: 'IBM Plex Mono', monospace;
+  --font-family: 'Futura', 'Arial', sans-serif;
 
   --font-size-xlarge: 2rem;
   --font-size-large: 1.5rem;
   --font-size-base: 1rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
 }
 
 /* base =============== */
@@ -103,7 +108,7 @@ html {
 
 .articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 500px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   grid-gap: var(--spacing-base);
 }
@@ -141,13 +146,24 @@ html {
   grid-template-columns: auto 1fr;
 
   padding: var(--spacing-base);
-  padding-bottom: 0;
-  max-width: var(--max-width-base);
+  max-width: var(--max-width-large);
   margin: 0 auto;
+
+}
+
+@media (min-width: 65rem) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .header-logo-link {
   display: block;
+  text-decoration: none;
+  color: var(--color-ink);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
 }
 
 .header-logo-img {

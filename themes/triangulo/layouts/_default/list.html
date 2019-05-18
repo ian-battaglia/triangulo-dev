@@ -4,7 +4,7 @@
     <h2 class="section-title">Artigos</h2>
 
     <div class="articles">
-      {{- range where .Pages "Type" "posts" }}
+      {{ range where .Pages "Type" "posts" }}
       <article class="card card--withDivider card--withLink">
         <div class="card-box">
           <h2 class="card-title">
@@ -18,7 +18,7 @@
           <p class="card-paragraph">{{ .Params.excerpt }}</p>
         </div>
       </article>
-      {{- end }}
+      {{ end }}
     </div>
   </section>
 </div>
