@@ -110,9 +110,7 @@ html {
 
 .articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  grid-gap: var(--spacing-base);
+  grid-gap: var(--spacing-large);
 }
 
 /* article ============ */
@@ -120,7 +118,7 @@ html {
 .article {
   position: relative;
   display: grid;
-  grid-gap: var(--spacing-base);
+  grid-gap: var(--spacing-small);
 }
 
 .article-title {
