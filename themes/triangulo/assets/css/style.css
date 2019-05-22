@@ -159,16 +159,26 @@ html {
 }
 
 .section-title {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-xlarge);
+  text-align: center;
   margin: 0;
+}
+
+/* divider ============ */
+
+.divider {
+  height: 4px;
+  width: 100%;
+  max-width: 100px;
+  background-color: var(--color-paper-highlight);
 }
 
 /* page =============== */
 
 .page {
   display: grid;
-  grid-gap: var(--spacing-xlarge);
-  justify-content: center;
+  grid-gap: var(--spacing-xxlarge);
+  justify-items: center;
   padding-top: var(--spacing-xxlarge);
 }
 
@@ -189,7 +199,7 @@ html {
   display: block;
   text-decoration: none;
   color: var(--color-ink);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
 }
 
@@ -215,6 +225,7 @@ html {
 /* post =============== */
 
 .post {
+  width: 100%;
   display: grid;
   grid-gap: var(--spacing-xlarge);
   justify-content: center;
