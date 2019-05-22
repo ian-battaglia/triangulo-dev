@@ -10,7 +10,7 @@
 
   /* max-width */
   --max-width-base: 45rem;
-  --max-width-large: 60rem;
+  --max-width-wide: 60rem;
 
   /* spacing */
   --spacing-xxlarge: 3rem;
@@ -154,6 +154,10 @@ html {
   padding: 0 var(--spacing-base);
 }
 
+.section--base {
+  max-width: var(--max-width-base);
+}
+
 .section-title {
   font-size: var(--font-size-large);
   margin: 0;
@@ -164,10 +168,7 @@ html {
 .page {
   display: grid;
   grid-gap: var(--spacing-xlarge);
-
-  margin: 0 auto;
-  max-width: var(--max-width-base);
-
+  justify-content: center;
   padding-top: var(--spacing-xxlarge);
 }
 
@@ -179,7 +180,7 @@ html {
   align-items: center;
 
   padding: var(--spacing-base);
-  max-width: var(--max-width-large);
+  max-width: var(--max-width-wide);
   margin: 0 auto;
 
 }
@@ -216,10 +217,12 @@ html {
 .post {
   display: grid;
   grid-gap: var(--spacing-xlarge);
+  justify-content: center;
 }
 
 .post-header {
   padding: 0 var(--spacing-base);
+  max-width: var(--max-width-base);
 }
 
 .post-title {
@@ -228,6 +231,18 @@ html {
 }
 
 .post-content {
+}
+
+.post-content p,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6,
+.post-content blockquote,
+.post-content ul,
+.post-content ol {
+  max-width: var(--max-width-base);
 }
 
 .post-content p,

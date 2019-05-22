@@ -1,11 +1,13 @@
 {{ define "main" }}
+
 <div class="page">
-  <section class="section">
+  <section class="section section--base">
     <div class="articles">
-      {{ range .Pages }}
+      {{ range where .Pages "Type" "posts" }}
         {{ partial "article.html" . }}
       {{ end }}
     </div>
   </section>
 </div>
+
 {{ end }}
