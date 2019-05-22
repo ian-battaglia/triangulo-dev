@@ -10,7 +10,7 @@
 
   /* max-width */
   --max-width-base: 45rem;
-  --max-width-large: 65rem;
+  --max-width-large: 60rem;
 
   /* spacing */
   --spacing-xxlarge: 3rem;
@@ -115,6 +115,38 @@ html {
   grid-gap: var(--spacing-base);
 }
 
+/* article ============ */
+
+.article {
+  position: relative;
+  display: grid;
+  grid-gap: var(--spacing-base);
+}
+
+.article-title {
+  font-size: var(--font-size-large);
+  margin: 0;
+}
+
+.article-link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.article-link:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.article-excerpt {
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+
 /* section ============ */
 
 .section {
@@ -151,13 +183,6 @@ html {
   max-width: var(--max-width-large);
   margin: 0 auto;
 
-}
-
-@media (min-width: 65rem) {
-  .header {
-    position: sticky;
-    top: 0;
-  }
 }
 
 .header-logo-link {
