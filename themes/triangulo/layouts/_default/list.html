@@ -2,7 +2,7 @@
 <div class="page">
   <section class="section">
     <div class="articles">
-      {{ range where .Pages "Type" "posts" }}
+      {{ range .Pages }}
       <article class="article">
         <h2 class="article-title">
           <a class="article-link" href="{{ .Permalink | relURL }}">
