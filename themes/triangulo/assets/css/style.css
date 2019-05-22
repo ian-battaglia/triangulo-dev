@@ -178,6 +178,7 @@ html {
 .header {
   display: grid;
   grid-template-columns: auto 1fr;
+  align-items: center;
 
   padding: var(--spacing-base);
   max-width: var(--max-width-large);
