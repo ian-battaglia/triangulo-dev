@@ -219,6 +219,7 @@ html {
 /* footer ============== */
 
 .footer {
+  width: 100%;
   padding: var(--spacing-base);
   padding-top: var(--spacing-xxlarge);
 }
@@ -311,7 +312,13 @@ html {
 /* newsletter ========= */
 
 .newsletter {
-  border: 2px solid var(--color-ink);
+  width: 100%;
+  background: var(--color-paper-highlight);
+}
+
+.newsletter-content {
+  max-width: var(--max-width-base);
+  margin: 0 auto;
   padding: var(--spacing-base);
 }
 
