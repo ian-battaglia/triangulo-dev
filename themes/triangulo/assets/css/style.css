@@ -185,14 +185,9 @@ html {
 /* header ============= */
 
 .header {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-
   padding: var(--spacing-base);
-  max-width: var(--max-width-wide);
+  max-width: var(--max-width-base);
   margin: 0 auto;
-
 }
 
 .header-logo-link {
@@ -207,18 +202,25 @@ html {
   display: block;
 }
 
-.header-menu-list {
+/* footer ============== */
+
+.footer {
+  padding: var(--spacing-base);
+  padding-top: var(--spacing-xxlarge);
+}
+
+.footer-menu-list {
   display: grid;
   grid-auto-flow: column;
+  justify-content: center;
   grid-gap: var(--spacing-base);
 
   margin: 0;
   padding: 0;
   list-style-type: none;
-  justify-content: end;
 }
 
-.header-menu-item-link {
+.footer-menu-item-link {
   color: var(--color-)
 }
 
