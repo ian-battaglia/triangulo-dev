@@ -190,12 +190,26 @@ html {
   margin: 0 auto;
 }
 
-.header-logo-link {
-  display: block;
+.header-logo {
+  display: grid;
+  grid-gap: var(--spacing-xsmall);
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+
   text-decoration: none;
   color: var(--color-ink);
+}
+
+.header-logo-text {
+  display: block;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
+  opacity: 0;
+}
+
+.header-logo:hover .header-logo-text {
+  opacity: 1;
 }
 
 .header-logo-img {
