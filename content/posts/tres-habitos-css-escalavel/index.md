@@ -92,10 +92,10 @@ queries_. Não existe hoje uma forma de estilizar um componente baseado em seu
 tamanho na tela, já que ainda não temos algo como [Container
 Queries][container-queries] no CSS.
 
-Mantenha sempre em mente que nenhuma solução técnica vem sem desvantagens. Para
-componentes assim, talvez o ideal seja ter diferentes versões dos seus estilos
-que podem ser utilizadas usando uma classe no elemento principal para definir
-uma versão "enxuta" ou "completa".
+Mantenha sempre em mente que <mark>nenhuma solução técnica vem sem
+desvantagens</mark>. Para componentes assim, talvez o ideal seja ter diferentes
+versões dos seus estilos que podem ser utilizadas usando uma classe no elemento
+principal para definir uma versão "enxuta" ou "completa".
 
 ## Deixar o conteúdo fluir
 
