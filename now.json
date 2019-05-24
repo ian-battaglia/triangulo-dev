@@ -1,5 +1,6 @@
 {
   "name": "triangulo-dev",
+  "alias": "triangulo.dev",
   "version": 2,
   "routes": [
     {"src": "^/dist/css/(.*)", "headers": {"cache-control": "public,max-age=31536000,immutable"} },
