@@ -6,8 +6,11 @@
   --color-paper: #fff;
   --color-paper-transparent: rgba(255, 255, 255, 0.8);
   --color-paper-highlight: #ddd;
+  --color-paper-mark: #ffeb56;
   --color-ink: #1f1f1f;
-  --color-ink-highlight: #ffeb56;
+
+  --color-accent: #281c4d;
+  --color-accent-text: #fff;
 
   /* max-width */
   --max-width-base: 45rem;
@@ -32,6 +35,8 @@
   --font-weight-bold: 600;
 
   --line-height-base: 1.6;
+
+  --form-field-height-base: 30px;
 }
 
 /* base =============== */
@@ -46,6 +51,13 @@ html {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-family);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-paper);
 }
 
 /* card =============== */
@@ -177,8 +189,10 @@ html {
 /* page =============== */
 
 .page {
+  flex: 1; /* grows inside body */
   display: grid;
   grid-gap: var(--spacing-xxlarge);
+  align-content: baseline;
   justify-items: center;
   padding-top: var(--spacing-xxlarge);
 }
@@ -187,6 +201,7 @@ html {
 
 .header {
   padding: var(--spacing-base);
+  width: 100%;
   max-width: var(--max-width-base);
   margin: 0 auto;
 }
@@ -221,23 +236,7 @@ html {
 
 .footer {
   width: 100%;
-  padding: var(--spacing-base);
   padding-top: var(--spacing-xxlarge);
-}
-
-.footer-menu-list {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-  grid-gap: var(--spacing-base);
-
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.footer-menu-item-link {
-  color: var(--color-)
 }
 
 /* post =============== */
@@ -315,7 +314,7 @@ html {
 }
 
 .post-content mark {
-  background-color: var(--color-ink-highlight);
+  background-color: var(--color-paper-mark);
 }
 
 /* newsletter ========= */
@@ -338,4 +337,38 @@ html {
 .newsletter-header-title {
   font-size: var(--font-size-large);
   margin: 0;
+}
+
+.newsletter-form {
+  display: grid;
+  grid-gap: var(--spacing-small);
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .newsletter-form {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+  }
+}
+
+.newsletter-form-input {
+  height: var(--form-field-height-base);
+  padding: 0 var(--spacing-xsmall);
+  border: 1px solid var(--color-accent);
+  border-radius: 0;
+  background: var(--color-paper);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.newsletter-form-button {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  height: var(--form-field-height-base);
+  padding: 0 var(--spacing-xsmall);
+  border: 0;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
 }

@@ -1,4 +1,4 @@
-<aside class="newsletter">
+<div class="newsletter">
   <div class="newsletter-content">
     <header class="newsletter-header">
       <h3 class="newsletter-header-title">
@@ -13,11 +13,10 @@
     <form class="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/triangulo.training" method="post" target="popupwindow"
                                                                                                                                 onsubmit="window.open('https://buttondown.email/triangulo.training', 'popupwindow')"
                                                                                                                                 class="embeddable-buttondown-form">
-      <label for="bd-email">Email</label>
-      <input type="email" name="email" id="bd-email">
+      <label class="newsletter-form-label" for="bd-email">E-mail:</label>
+      <input class="newsletter-form-input" type="email" name="email" id="bd-email">
+      <input class="newsletter-form-button" type="submit" value="Cadastre-se" />
       <input type="hidden" value="1" name="embed" />
-      <input type="submit" value="Cadastre-se" />
     </form>
-
   </div>
-</aside>
+</div>
