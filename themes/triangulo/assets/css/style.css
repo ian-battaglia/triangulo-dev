@@ -25,9 +25,10 @@
   --spacing-xsmall: 0.25rem;
 
   /* typography */
-  --font-family: 'IBM Plex Mono', monospace;
+  --font-family-sans: 'IBM Plex Sans', 'Arial', sans-serif;
+  --font-family-mono: 'IBM Plex Mono', 'Menlo', monospace;
 
-  --font-size-xlarge: 2rem;
+  --font-size-xlarge: 3rem;
   --font-size-large: 1.5rem;
   --font-size-base: 1rem;
 
@@ -36,7 +37,45 @@
 
   --line-height-base: 1.6;
 
-  --form-field-height-base: 30px;
+  /* forms */
+
+  --form-field-height-base: 2rem;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url(/fonts/ibmplexmono-regular-webfont.woff) format('woff'),
+       url(/fonts/ibmplexmono-regular-webfont.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url(/fonts/ibmplexsans-regular-webfont.woff) format('woff'),
+       url(/fonts/ibmplexsans-regular-webfont.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url(/fonts/ibmplexsans-bold-webfont.woff) format('woff'),
+       url(/fonts/ibmplexsans-bold-webfont.woff2) format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url(/fonts/ibmplexsans-italic-webfont.woff) format('woff'),
+       url(/fonts/ibmplexsans-italic-webfont.woff2) format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* base =============== */
@@ -50,7 +89,8 @@
 html {
   background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-family);
+  font-family: var(--font-family-sans);
+  font-weight: 400;
 }
 
 body {
@@ -58,65 +98,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background: var(--color-paper);
-}
-
-/* card =============== */
-
-.card {
-  background: var(--color-paper);
-  color: var(--color-ink);
-
-  --card-border: 2px solid var(--color-ink);
-  border: var(--card-border);
-}
-
-.card--featured {
-  position: relative;
-}
-
-.card--featured:after {
-  content: '✨';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translateX(50%) translateY(50%);
-  font-size: var(--font-size-xlarge)
-}
-
-.card--withLink {
-  position: relative;
-}
-
-.card-link {
-  text-decoration: inherit;
-  color: inherit;
-}
-
-.card-link:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.card-box {
-  padding: var(--spacing-small);
-}
-
-.card--withDivider > .card-box + .card-box {
-  border-top: var(--card-border);
-}
-
-.card-title {
-  font-size: var(--font-size-large);
-  margin: 0;
-}
-
-.card-paragraph {
-  font-size: var(--font-size-base);
-  margin: 0;
 }
 
 /* articles =========== */
@@ -305,6 +286,7 @@ body {
 }
 
 .post-content code {
+  font-family: var(--font-family-mono);
   background-color: var(--color-paper-highlight);
   padding: var(--spacing-xsmall);
 }
