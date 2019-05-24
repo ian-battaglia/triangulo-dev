@@ -309,6 +309,10 @@ html {
   padding: var(--spacing-xsmall);
 }
 
+.post-content img {
+  width: 100%;
+}
+
 /* newsletter ========= */
 
 .newsletter {
