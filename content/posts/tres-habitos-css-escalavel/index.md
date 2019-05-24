@@ -1,8 +1,7 @@
 ---
 title: "Três hábitos para escrever CSS escalável"
 excerpt: "O que você precisa saber para escrever CSS que escala junto com o seu projeto."
-date: 2019-02-27T19:57:29-03:00
-draft: true
+date: 2019-05-24T09:32:00-03:00
 ---
 
 Com cerca de 360 propriedades, não faltam muitas coisas para você conseguir
@@ -17,12 +16,12 @@ Em meio a tantos frameworks diferentes e técnicas como Flexbox, Grid CSS,
 floats, e até CSS-in-JS, é difícil olhar através do superficial e achar as boas
 práticas e hábitos essenciais para escrever CSS que dura.
 
-Após muitos anos como desenvolvedor front-end acabei desenvolvendo alguns
+Após muitos anos como desenvolvedor front-end acabei desvendando alguns
 hábitos que me levam a escrever CSS mais escalável. Agora, quase sempre que
 encontro estilos difíceis de lidar ou que dão bastante trabalho para refatorar,
 percebo que eles não seguem um dos três princípios básicos que vou te ensinar.
 
-Aprender a escrever CSS escalável é muito útil pois, independente da sua
+Aprender a escrever CSS escalável é essencial, já que independente da sua
 abordagem para criar interfaces de usuário na web, você vai precisar
 estilizá-la. E, por mais bonita e bem planejada que seja, esta mesma interface
 de usuário vai passar por muitas mudanças conforme o produto é alterado. Novas
@@ -42,76 +41,61 @@ Cada vez que tentamos controlar o posicionamento de um elemento, este elemento
 se torna menos reutilizável em diferentes contextos e talvez precise ser
 refatorado quando o layout das páginas em que são utilizados forem alterados.
 
-Vamos imaginar que temos uma galeria de imagens, composta por diversos
-componentes `Figura`. Por componente, eu quero dizer um conjunto de HTML, CSS
-e JS que trabalham juntos – usando ou não um framework. Cada `Figura` tem um
-título, uma imagem e uma legenda. Quando estamos construindo o componente
-`Figura` pode parecer fácil controlar o seu próprio posicionamento, já que
-sabemos exatamente onde `Figura` será utilizado.
+Vamos imaginar que temos um componente `Botao`. Por componente, eu quero dizer
+um conjunto de HTML, CSS e JS que trabalham juntos – usando ou não um
+framework. Este componente geralmente é utilizado em conjunto com outros botões
+na nossa interface de usuário. Para posicionar estes componentes poderíamos
+recorrer a seletores CSS como `.botao + .botao`, adicionando um pouco de
+`margin` entre cada botão. Dessa forma, qualquer lugar que usasse `Botao` teria
+o espaçamento entre eles padronizado.
 
-[image]
+O problema dessa solução é que ela não é escalável. No momento que quisermos
+trocar um `Botao` por um `Link`, este espaçamento não seria mais aplicado.
+Conforme estas excessões se tornam a regra, poderíamos acabar com diversos
+seletores muito específicos: `.botao + .link`, `.link + .botao` e
+`.link + .link`. É inviável tentar lidar com espaçamento automático entre
+componentes porque não temos certeza de como eles serão utilizados em conjunto
+no futuro.
 
-Porém, se pensarmos um pouco mais à fundo, a responsabilidade real do
-componente `Figura` é estilizar uma combinação de título, imagem e legenda. Sua
-posição na tela não é algo que é influenciado por estes atributos. Portanto,
-faz sentido implementar `Figura` de modo que todo o seu CSS só estilize o que
-está dentro da `Figura`.
+![imagem com um botão e um link sem espaçamento entre eles](botao-botao.png)
 
-[image]
-
-Abrir mão do posicionamento significa deixar essa responsabilidade para os
-componentes que usam `Figura` dentro de si. `Galeria` poderia, portanto,
-controlar o layout de vários componentes `Figura` da forma que quisesse.
-Estilizar componentes de fora pra dentro – em vez de dentro pra fora – permite
-que as responsabilidades sejam bem definidas e que cada componente seja
-altamente reutilizável.
-
-[image with many usages of gallery and figure]
-
-Recentemente trabalhei em um projeto que não seguiu este hábito em alguns de
-seus componentes. O componentes de `Botão`, neste caso, tentavam ser
-inteligentes quanto ao espaçamento entre si. Eles usaram um seletor como
-`.botao + .botao` para adicionar `margin`, criando um espaçamento automático
-para quem os usasse repetidamente no código.
-
-[image of buttons being repeatedly used in a form]
-
-Por não abrir mão do posicionamento, tivemos que reescrever vários outros
-componentes que usavam `Botão` dentro de si no momento que o espaçamento já não
-era desejado em certos casos.
-
-Se desde o começo o espaçamento fosse responsabilidade dos componentes que
-englobam os botões, este problema poderia ter sido resolvido sem a necessidade
-de grandes alterações.
+Uma forma melhor de espaçar componentes e evitar este problema com seletores
+específicos é dar ao componente que os engloba a responsabilidade de
+espaçá-los. Um componente de `Fomulario`, por exemplo, poderia ditar os estilos
+de espaçamento entre cada `Botao`, `Link` e `Input`. Controlando o espaçamento
+de cima pra baixo na hierarquia dos componentes torna o CSS muito mais
+escalável por permitir que componentes de baixo nível possam ser utilizado em
+contextos completamente diferentes ao mesmo tempo sem que eles tenham que ter
+estilos específicos para cada um desses contextos.
 
 ## Abrir mão do tamanho
 
 Assim como abrir mão do posicionamento, abrir mão do tamanho também é um ótimo
-hábito para escrever CSS escalável. Na página de galeria que nós acabamos de
-implementar, nós poderíamos ter estilizado o componente `Figura` de tal forma
-que seu `width` estaria fixo em `300px`, já que este é o tamanho exato deste
-elemento no design. Porém, se decidirmos utilizar `Figura` dentro de um
-elemento menor, nós teríamos problemas.
+hábito para escrever CSS escalável. Em uma página de galeria, por exemplo, nós
+poderíamos estilizar o componente `Figura` de tal forma que seu `width` estaria
+fixo em `300px`, já que este é o tamanho exato deste elemento no design. Porém,
+se decidirmos utilizar `Figura` dentro de um elemento maior ou menor, nós
+teríamos problemas.
 
 Ao abrir mão do espaçamento, delegamos ao máximo a definição real do tamanho de
 um elemento na tela. Isso significa que quase todos os seus componentes seriam
 estilizados com `width: 100%`, de modo que quem os engloba pode decidir seu
 tamanho real final.
 
-[image]
+![images de uma galeria de imagens com Figura em diversos
+tamanhos](galeria-diversa.png)
 
 Existem alguns casos em que não é possível abrir mão do tamanho dos nossos
 componentes. É, por exemplo, muito difícil estilizar um componente complexo
 para comportar tamanhos muito grandes e muito pequenos sem o uso de _media
 queries_. Não existe hoje uma forma de estilizar um componente baseado em seu
-tamanho na tela, já que ainda não temos algo como Container Queries no CSS.
+tamanho na tela, já que ainda não temos algo como [Container
+Queries][container-queries] no CSS.
 
 Mantenha sempre em mente que nenhuma solução técnica vem sem desvantagens. Para
 componentes assim, talvez o ideal seja ter diferentes versões dos seus estilos
 que podem ser utilizadas usando uma classe no elemento principal para definir
 uma versão "enxuta" ou "completa".
-
-[image]
 
 ## Deixar o conteúdo fluir
 
@@ -133,7 +117,7 @@ hidden`, `width` e `height` fixos, `text-overflow: ellipsis` e muitas outras
 regras. Esta abordagem normalmente é necessária quando temos que manter um
 balanço  e prevenir que um conteúdo gerado pelos usuários quebre a interface.
 
-[image]
+![imagem de uma figura com sua descrição incompleta](chicago-controlada.png)
 
 O problema de tentar controlar o conteúdo é que uma mudança nos requerimentos
 deste conteúdo pode nos forçar a refatorar todos os componentes que não se
@@ -155,14 +139,28 @@ regras como `overflow-wrap: break-word` e `min-width: 200px` definimos limites
 de como o conteúdo vai fluir dentro dos nossos componentes, tendo um pouco mais
 de controle, mas não o suficiente para limitar demais o conteúdo.
 
-[image overflow-wrap]
+![imagem de uma figura com sua descrição completa](chicago-fluida.png)
 
-## Resumo
+É claro que você pode misturar a abordagem fluída com a controlada. Esta
+é normalmente a forma que eu implemento componentes que recebem conteúdo
+bastante diverso. Você pode precisar controlar o tamanho do título
+e a quantidade máxima de palavras na descrição de uma imagem, guiando quem
+escreve o conteúdo a se encaixar em um meio-termo entre liberdade e controle.
 
-Os três hábitos apresentados se complementam para nos guiar na estilização de
-interfaces de usuário na web. CSS é uma ferramenta muito poderosa e nem sempre
-muito bem compreendida.
+## Desenvolva os seus hábitos
 
-----
+Não é fácil desenvolver interfaces para a web, principalmente para produtos que
+evoluem em um ritmo constante. Escrever sobre estes três hábitos é o resultado
+de muitos anos trabalhando em diversos projetos dos mais variados tamanhos. Com
+certeza existem muitos outros hábitos que podemos seguir para escrever CSS
+escalável, talvez alguns que eu até siga sem mesmo perceber ou formalizar.
 
-Ideia para imagens: outline, tela escura
+Documentar problemas e soluções encontradas pode ser um ótimo caminho para você
+começar a descobrir os seus próprios hábitos. Lembre de utilizar cada uma das
+360 propriedades do CSS com uma coisa em mente: nunca faltarão tarefas para
+alterar interfaces de usuário. Abrir mão do posicionamento, abrir mão do
+tamanho e deixar o conteúdo fluir são só algumas boas práticas que podemos
+seguir para manter nossos projetos em ordem mesmo após anos de trabalho.
+
+[container-queries]: https://alistapart.com/article/container-queries-once-more-unto-the-breach/
+
