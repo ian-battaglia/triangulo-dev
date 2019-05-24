@@ -13,7 +13,7 @@
       "config": { "distDir": "public" }
     }
   ],
-  "regions": ["gru"],
+  "regions": ["gru1"],
 
   "public": true
 }
