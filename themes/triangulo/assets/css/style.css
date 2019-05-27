@@ -13,7 +13,7 @@
   --color-accent-text: #fff;
 
   /* max-width */
-  --max-width-base: 45rem;
+  --max-width-base: 40rem;
   --max-width-wide: 60rem;
 
   /* spacing */
@@ -31,6 +31,8 @@
   --font-size-xlarge: 3rem;
   --font-size-large: 1.5rem;
   --font-size-base: 1rem;
+
+  --font-size-base-px: 18px;
 
   --font-weight-normal: 400;
   --font-weight-bold: 600;
@@ -90,6 +92,7 @@ html {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-family-sans);
+  font-size: var(--font-size-base-px);
   font-weight: 400;
 }
 
