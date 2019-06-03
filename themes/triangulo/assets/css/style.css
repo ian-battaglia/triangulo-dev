@@ -274,7 +274,7 @@ body {
 }
 
 .post-content a {
-  color: var(--color-ink);
+  color: var(--color-ink-strong);
   font-weight: var(--font-weight-bold);
 }
 
