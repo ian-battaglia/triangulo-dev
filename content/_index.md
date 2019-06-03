@@ -1,12 +1,11 @@
 ---
-title: Front-end levado a sério
+title: Desenvolvimento web levado a sério
 ---
 
-Desenvolvimento frontend é hoje o ponto-chave para o sucesso de um produto na
-web. Ao longo dos anos, usuários se acostumaram com interfaces altamente
-interativas e responsivas. Construir estas interfaces não é um trabalho simples,
-principalmente quando os requerimentos do projeto são alterados constantemente.
+Construir experiências na web já não é mais tão simples. O que antes poderia
+ser resolvido com um pouco de conhecimento de código e persistência, agora
+demanda a interação de diversos profissionais altamente qualificados.
 
 <strong>triângulo</strong> é um espaço para aprender a construir interfaces de
 usuário que são robustas e flexíveis, ao mesmo tempo. Dos fundamentos aos
-novos frameworks JavaScript.
+novos frameworks JavaScript. Do começo ao fim.
