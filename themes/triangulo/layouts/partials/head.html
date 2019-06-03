@@ -8,6 +8,7 @@
   <title>{{ .Title }} - {{ .Site.Title }}</title>
   {{- end }}
   <meta name="author" content="{{ .Site.Params.author.name }}"/>
+  <link rel="canonical" href="{{ .Permalink}}" />
 
   {{ .Hugo.Generator }}
   {{- if .RSSLink }}
@@ -20,4 +21,7 @@
 
   {{ $style := resources.Get "css/style.css" }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+  <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+  <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
 </head>

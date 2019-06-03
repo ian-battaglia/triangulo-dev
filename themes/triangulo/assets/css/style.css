@@ -301,6 +301,7 @@ body {
   width: 100%;
   max-width: 100px;
   background-color: var(--color-paper-highlight);
+  border: 0;
 }
 
 /* newsletter ========= */

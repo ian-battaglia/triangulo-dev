@@ -4,6 +4,8 @@ excerpt: "O que você precisa saber para escrever CSS que escala junto com o seu
 date: 2019-05-24T09:32:00-03:00
 ---
 
+_Este artigo também está disponível como [slides][slides]._
+
 Com cerca de 360 propriedades, não faltam muitas coisas para você conseguir
 estilizar basicamente qualquer coisa usando a versão atual do CSS. O maior
 problema na verdade está como solucionar problemas de estilização de uma forma
@@ -161,8 +163,5 @@ alterar interfaces de usuário. Abrir mão do posicionamento, abrir mão do
 tamanho e deixar o conteúdo fluir são só algumas boas práticas que podemos
 seguir para manter nossos projetos em ordem mesmo após anos de trabalho.
 
----
-
-asd
-
 [container-queries]: https://alistapart.com/article/container-queries-once-more-unto-the-breach/
+[slides]: https://speakerdeck.com/hugobessaa/tres-habitos-para-escrever-css-escalavel
