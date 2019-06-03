@@ -296,6 +296,13 @@ body {
   background-color: var(--color-paper-mark);
 }
 
+.post-content hr {
+  height: 4px;
+  width: 100%;
+  max-width: 100px;
+  background-color: var(--color-paper-highlight);
+}
+
 /* newsletter ========= */
 
 .newsletter {

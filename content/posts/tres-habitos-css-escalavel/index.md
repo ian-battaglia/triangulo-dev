@@ -112,10 +112,9 @@ e adaptar o componente ao conteúdo (abordagem fluída).
 
 ### Abordagem controlada
 
-Para forçar o conteúdo a se adaptar a um componente, podemos usar `overflow:
-hidden`, `width` e `height` fixos, `text-overflow: ellipsis` e muitas outras
+Para forçar o conteúdo a se adaptar a um componente, podemos usar `overflow: hidden`, `width` e `height` fixos, `text-overflow: ellipsis` e muitas outras
 regras. Esta abordagem normalmente é necessária quando temos que manter um
-balanço  e prevenir que um conteúdo gerado pelos usuários quebre a interface.
+balanço e prevenir que um conteúdo gerado pelos usuários quebre a interface.
 
 ![imagem de uma figura com sua descrição incompleta](chicago-controlada.png)
 
@@ -162,5 +161,8 @@ alterar interfaces de usuário. Abrir mão do posicionamento, abrir mão do
 tamanho e deixar o conteúdo fluir são só algumas boas práticas que podemos
 seguir para manter nossos projetos em ordem mesmo após anos de trabalho.
 
-[container-queries]: https://alistapart.com/article/container-queries-once-more-unto-the-breach/
+---
 
+asd
+
+[container-queries]: https://alistapart.com/article/container-queries-once-more-unto-the-breach/
