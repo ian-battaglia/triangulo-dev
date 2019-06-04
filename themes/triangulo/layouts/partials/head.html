@@ -10,6 +10,27 @@
   <meta name="author" content="{{ .Site.Params.author.name }}"/>
   <link rel="canonical" href="{{ .Permalink}}" />
 
+  {{ if .Params.thumbnail }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
+  <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
+  {{ else }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}/{{ .Site.Params.header_image }}">
+  <meta property="twitter:image" content="{{ .Site.BaseURL }}/{{ .Site.Params.header_image }}" />
+  {{ end }}
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+
+  {{ if .Params.excerpt }}
+  <meta name="description" content="{{ .Params.excerpt }}">
+  <meta property="og:description" content="{{ .Params.excerpt }}" />
+  <meta property="twitter:description" content="{{ .Params.excerpt }}" />
+  {{ else }}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}" />
+  <meta property="twitter:description" content="{{ .Site.Params.description }}" />
+  {{ end }}
+
   {{ .Hugo.Generator }}
   {{- if .RSSLink }}
   <link href="{{ .RSSLink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -37,4 +58,5 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+
 </head>
