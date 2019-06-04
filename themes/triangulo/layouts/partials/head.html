@@ -4,8 +4,12 @@
 
   {{- if .IsHome }}
   <title>{{ .Site.Title }}</title>
+  <meta property="og:title" content="{{ .Site.Title }}">
+  <meta property="twitter:title" content="{{ .Site.Title }}" />
   {{- else }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
+  <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+  <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
   {{- end }}
   <meta name="author" content="{{ .Site.Params.author.name }}"/>
   <link rel="canonical" href="{{ .Permalink}}" />
