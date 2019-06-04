@@ -2,7 +2,7 @@
 
 :root {
   /* colors */
-  --color-paper: #000;
+  --color-paper: #111;
   --color-paper-transparent: rgba(0, 0, 0, 0.7);
   --color-paper-highlight: #444;
   --color-paper-mark: #ffeb56;
