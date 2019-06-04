@@ -9,17 +9,17 @@
   {{- else }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
   <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
-  <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
+  <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
   {{- end }}
   <meta name="author" content="{{ .Site.Params.authorName }}"/>
   <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ if .Params.thumbnail }}
   <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
-  <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
   {{ else }}
   <meta property="og:image" content="{{ .Site.BaseURL }}images/triangulo-og.png">
-  <meta property="twitter:image" content="{{ .Site.BaseURL }}images/triangulo-og.png" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/triangulo-og.png" />
   {{ end }}
 
   <meta property="og:type" content="article">
@@ -28,11 +28,11 @@
   {{ if .Params.excerpt }}
   <meta name="description" content="{{ .Params.excerpt }}">
   <meta property="og:description" content="{{ .Params.excerpt }}" />
-  <meta property="twitter:description" content="{{ .Params.excerpt }}" />
+  <meta name="twitter:description" content="{{ .Params.excerpt }}" />
   {{ else }}
   <meta name="description" content="{{ .Site.Params.description }}">
   <meta property="og:description" content="{{ .Site.Params.description }}" />
-  <meta property="twitter:description" content="{{ .Site.Params.description }}" />
+  <meta name="twitter:description" content="{{ .Site.Params.description }}" />
   {{ end }}
 
   {{ .Hugo.Generator }}
