@@ -18,8 +18,8 @@
   <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
   <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
   {{ else }}
-  <meta property="og:image" content="/images/triangulo-og.png">
-  <meta property="twitter:image" content="/images/triangulo-og.png" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/triangulo-og.png">
+  <meta property="twitter:image" content="{{ .Site.BaseURL }}images/triangulo-og.png" />
   {{ end }}
 
   <meta property="og:type" content="article">
