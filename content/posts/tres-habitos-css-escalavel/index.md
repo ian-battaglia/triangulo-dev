@@ -1,6 +1,7 @@
 ---
 title: "Três hábitos para escrever CSS escalável"
 excerpt: "O que você precisa saber para escrever CSS que escala junto com o seu projeto."
+thumbnail: "images/posts/tres-habitos-css-escalavel/social-image.png"
 date: 2019-05-24T09:32:00-03:00
 ---
 

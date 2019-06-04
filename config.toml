@@ -1,6 +1,9 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Triângulo"
-description = "Desenvolvimento web levado a sério"
 
 theme = "triangulo"
+
+[params]
+  description = "Desenvolvimento web levado a sério"
+  authorName = "Hugo Bessa"

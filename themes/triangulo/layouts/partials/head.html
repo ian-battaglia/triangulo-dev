@@ -11,15 +11,15 @@
   <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
   <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
   {{- end }}
-  <meta name="author" content="{{ .Site.Params.author.name }}"/>
-  <link rel="canonical" href="{{ .Permalink}}" />
+  <meta name="author" content="{{ .Site.Params.authorName }}"/>
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ if .Params.thumbnail }}
   <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
   <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
   {{ else }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/{{ .Site.Params.header_image }}">
-  <meta property="twitter:image" content="{{ .Site.BaseURL }}/{{ .Site.Params.header_image }}" />
+  <meta property="og:image" content="/images/triangulo-og.png">
+  <meta property="twitter:image" content="/images/triangulo-og.png" />
   {{ end }}
 
   <meta property="og:type" content="article">
