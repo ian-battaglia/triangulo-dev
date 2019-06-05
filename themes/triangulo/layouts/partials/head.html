@@ -42,7 +42,7 @@
   {{- end }}
 
   {{ $normalize := resources.Get "css/normalize.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $normalize.Permalink }}" integrity="{{ $normalize.Data.Integrity }}" media="all" />
+  <link rel="stylesheet" href="{{ $normalize.RelPermalink }}" integrity="{{ $normalize.Data.Integrity }}" media="all" />
 
   {{ $style := resources.Get "css/style.css" }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
