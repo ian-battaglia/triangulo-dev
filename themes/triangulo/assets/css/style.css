@@ -10,6 +10,7 @@
   --color-ink-strong: #fff;
 
   --color-accent: #651fff;
+  --color-accent-light: #7638ff;
   --color-accent-text: #fff;
 
   /* max-width */
@@ -47,6 +48,9 @@
 
   /* forms */
   --form-field-height-base: 2rem;
+
+  /* animation */
+  --animation-duration-base: 0.2s;
 }
 
 /* base =============== */
@@ -361,9 +365,15 @@ body {
   height: var(--form-field-height-base);
   padding: 0 var(--spacing-small);
   border-radius: var(--border-radius-base);
+  cursor: pointer;
+  transition: background var(--animation-duration-base);
 
   /* reset */
   border: 0;
   appearance: none;
   -webkit-appearance: none;
+}
+
+.newsletter-form-button:hover {
+  background: var(--color-accent-light);
 }
